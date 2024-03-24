@@ -6,12 +6,12 @@ namespace MG.RequestResponseMiddleware.Library.Middlewares;
 public class RequestResponseOptions
 {
     internal ILoggerFactory LoggerFactory;
-    internal Func<RequestResponseContext,Task> ResResHandler {  get; set; }
+    internal Func<RequestResponseContext,Task> ReqResHandler {  get; set; }
     internal LoggingOptions LoggingOptions;
 
     public void UseHandler(Func<RequestResponseContext,Task> resResHandler)
     {
-        ResResHandler = resResHandler;
+        ReqResHandler = resResHandler;
     }
 
     public void UseLogger(ILoggerFactory loggerFactory, Action<LoggingOptions> loggingAction)
