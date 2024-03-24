@@ -1,4 +1,4 @@
-﻿namespace MG.RequestResponseMiddleware.Library.Models;
+﻿namespace MG.RequestResponseMiddleware.Library;
 
 public class RequestResponseContext
 {
@@ -16,7 +16,7 @@ public class RequestResponseContext
     public string FormattedCreationTime =>
         ResponseCreationTime is null ? "00:00.000"
         :string.Format("{0:mm\\:ss\\.fff}", ResponseCreationTime);
-    public string Url { get; set; }
+    public Uri Url => BuildUrl();
 
     public int? RequestLength => RequestBody?.Length;
     public int? ResponseLength => ResponseBody?.Length;

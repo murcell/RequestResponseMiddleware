@@ -1,6 +1,5 @@
 ﻿using MG.RequestResponseMiddleware.Library.Interfaces;
 using MG.RequestResponseMiddleware.Library.Middlewares;
-using MG.RequestResponseMiddleware.Library.Models;
 
 namespace MG.RequestResponseMiddleware.Library.MessageCreators;
 

@@ -1,7 +1,7 @@
-﻿using MG.RequestResponseMiddleware.Library.Models;
+﻿using MG.RequestResponseMiddleware.Library.Middlewares;
 using Microsoft.Extensions.Logging;
 
-namespace MG.RequestResponseMiddleware.Library.Middlewares;
+namespace MG.RequestResponseMiddleware.Library;
 
 public class RequestResponseOptions
 {

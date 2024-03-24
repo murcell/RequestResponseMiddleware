@@ -1,7 +1,6 @@
 ﻿using MG.RequestResponseMiddleware.Library.Interfaces;
 using MG.RequestResponseMiddleware.Library.MessageCreators;
 using MG.RequestResponseMiddleware.Library.Middlewares;
-using MG.RequestResponseMiddleware.Library.Models;
 using Microsoft.Extensions.Logging;
 
 namespace MG.RequestResponseMiddleware.Library.LogWriters;

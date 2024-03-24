@@ -1,5 +1,4 @@
 ﻿global using MG.RequestResponseMiddleware.Library.Interfaces;
-global using MG.RequestResponseMiddleware.Library.Models;
 global using Microsoft.AspNetCore.Http;
 global using System;
 global using System.Collections.Generic;

@@ -1,5 +1,4 @@
-﻿using MG.RequestResponseMiddleware.Library.Interfaces;
-using MG.RequestResponseMiddleware.Library.LogWriters;
+﻿using MG.RequestResponseMiddleware.Library.LogWriters;
 using MG.RequestResponseMiddleware.Library.Middlewares;
 using Microsoft.AspNetCore.Builder;
 
@@ -12,12 +11,15 @@ public static class ApplicationBuilderExtensions
         var opt=new RequestResponseOptions();
         optionAction(opt);
 
+        //if (opt.ReqResHandler is null && opt.LoggerFactory is null)
+        //    throw new ArgumentNullException($"{nameof(opt.ReqResHandler)} and {nameof(opt.LoggerFactory)} ");
+
         ILogWriter logWriter = opt.LoggerFactory is null? new NullLogWriter(): new LoggerFactoryLogWriter(opt.LoggerFactory, opt.LoggingOptions);
 
         if (opt.ReqResHandler is not null)
             appBuilder.UseMiddleware<HandlerRequestResponseLoggingMiddlaware>(opt.ReqResHandler, logWriter);
         else
-            appBuilder.UseMiddleware<RequestResponseLoggingMiddleware>(opt.ReqResHandler, logWriter);
+            appBuilder.UseMiddleware<RequestResponseLoggingMiddleware>(logWriter);
 
 
         return appBuilder;
