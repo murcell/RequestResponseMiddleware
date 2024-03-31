@@ -1,3 +1,4 @@
+using MG.RequestResponseMiddleware.FileLogger.Library;
 using MG.RequestResponseMiddleware.Library;
 using MG.RequestResponseMiddleware.Library.Middlewares;
 using Microsoft.AspNetCore.Builder;
@@ -51,7 +52,16 @@ namespace MiddlewareTestApi
 
             app.UseAuthorization();
 
-            ////using the middleware
+            app.AddMGRequestResponseFileLoggerMiddleware(opt =>
+            {
+                opt.FileDirectory=AppDomain.CurrentDomain.BaseDirectory;
+                opt.FileName = "Mursel_Log";
+                opt.Extesion = "txt";
+                opt.UseJsonFormat=true;
+                opt.ForceCreateDirectory = true;    
+            });
+
+            //using the middleware
             //app.AddMGRequestResponseMiddleware(opt =>
             //{
             //    //opt.UseHandler(async context =>
@@ -62,16 +72,16 @@ namespace MiddlewareTestApi
             //    //    Console.WriteLine($"Url: {context.Url}");
             //    //});
 
-            //    //opt.UseLogger(app.ApplicationServices.GetRequiredService<ILoggerFactory>(), opt =>
-            //    //{
-            //    //    opt.LogLevel = LogLevel.Error;
-            //    //    opt.LoggerCategoryName = "MyCustomeCategoryName";
-            //    //    opt.LoggingFields.Add(LogFileds.Request);
-            //    //    opt.LoggingFields.Add(LogFileds.Response);
-            //    //    opt.LoggingFields.Add(LogFileds.ResponseTiming);
-            //    //    opt.LoggingFields.Add(LogFileds.Path);
-            //    //    opt.LoggingFields.Add(LogFileds.QueryString);
-            //    //});
+            //    opt.UseLogger(app.ApplicationServices.GetRequiredService<ILoggerFactory>(), opt =>
+            //    {
+            //        opt.LogLevel = LogLevel.Error;
+            //        opt.LoggerCategoryName = "MyCustomeCategoryName";
+            //        opt.LoggingFields.Add(LogFileds.Request);
+            //        opt.LoggingFields.Add(LogFileds.Response);
+            //        opt.LoggingFields.Add(LogFileds.ResponseTiming);
+            //        opt.LoggingFields.Add(LogFileds.Path);
+            //        opt.LoggingFields.Add(LogFileds.QueryString);
+            //    });
 
             //});
             app.UseEndpoints(endpoints =>

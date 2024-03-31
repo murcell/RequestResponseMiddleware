@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MG.RequestResponseMiddleware.Library", "MG.RequestResponseMiddleware.Library\MG.RequestResponseMiddleware.Library.csproj", "{BA1D2EDE-B3DF-483F-A41B-0549984E0716}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddlewareTestApi", "MiddlewareTestApi\MiddlewareTestApi.csproj", "{C8E8C327-A811-42E4-9FCB-B1B89F2FBB2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiddlewareTestApi", "MiddlewareTestApi\MiddlewareTestApi.csproj", "{C8E8C327-A811-42E4-9FCB-B1B89F2FBB2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MG.RequestResponseMiddleware.FileLogger.Library", "MG.RequestResponseMiddleware.FileLogger.Library\MG.RequestResponseMiddleware.FileLogger.Library.csproj", "{922CDBBF-9FB0-41FA-9A11-98E60CFD91A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C8E8C327-A811-42E4-9FCB-B1B89F2FBB2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8E8C327-A811-42E4-9FCB-B1B89F2FBB2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8E8C327-A811-42E4-9FCB-B1B89F2FBB2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{922CDBBF-9FB0-41FA-9A11-98E60CFD91A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{922CDBBF-9FB0-41FA-9A11-98E60CFD91A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{922CDBBF-9FB0-41FA-9A11-98E60CFD91A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{922CDBBF-9FB0-41FA-9A11-98E60CFD91A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
